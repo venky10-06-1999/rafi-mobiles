@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rafi Mobiles | Mobile Sales, Premium Accessories & Express Repair</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#2563eb',
+              600: '#1d4ed8',
+              700: '#1e40af',
+              accent: '#06b6d4',
+              emerald: '#10b981',
+              dark: '#0f172a'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .dark .glass-card {
+      background: rgba(15, 23, 42, 0.85);
+    }
+    
+    .glow-effect {
+      box-shadow: 0 0 35px -5px rgba(37, 99, 235, 0.25);
+    }
+
+    /* Hide scrollbars for filter bar */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased font-sans selection:bg-blue-600 selection:text-white">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-800 text-white text-xs sm:text-sm py-2 px-4 shadow-sm">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-1 sm:gap-4 text-center sm:text-left">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-emerald-500 text-white animate-pulse">
+          Open Now
+        </span>
+        <span>Express 30-Min Mobile Repairs & Genuine Spares with 90-Day Warranty</span>
+      </div>
+      <div class="flex items-center gap-4 text-xs font-medium">
+        <a href="tel:+919542729166" class="hover:underline flex items-center gap-1">
+          <i data-lucide="phone-call" class="w-3.5 h-3.5"></i> +91 98765 43210
+        </a>
+        <span class="text-blue-300">|</span>
+        <span class="flex items-center gap-1 text-slate-200">
+          <i data-lucide="clock" class="w-3.5 h-3.5"></i> 9:30 AM - 10:00 PM (Daily)
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navbar -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all duration-300 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-blue-600 to-cyan-500 flex items-center justify-center text-white shadow-lg shadow-blue-500/30 group-hover:scale-105 transition-transform duration-300">
+            <i data-lucide="smartphone" class="w-6 h-6 stroke-[2.2]"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="text-2xl font-extrabold tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors">RAFI</span>
+              <span class="text-2xl font-extrabold tracking-tight bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">MOBILES</span>
+            </div>
+            <p class="text-[11px] font-semibold uppercase tracking-widest text-slate-400 -mt-1">Sales &bull; Spares &bull; Care</p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+          <a href="#home" class="hover:text-blue-600 transition-colors">Home</a>
+          <a href="#products" class="hover:text-blue-600 transition-colors">Mobiles & Accessories</a>
+          <a href="#services" class="hover:text-blue-600 transition-colors">Repair Services</a>
+          <a href="#features" class="hover:text-blue-600 transition-colors">Why Choose Us</a>
+          <a href="#reviews" class="hover:text-blue-600 transition-colors">Testimonials</a>
+          <a href="#contact" class="hover:text-blue-600 transition-colors">Contact & Location</a>
+        </nav>
+
+        <!-- Right Quick Actions -->
+        <div class="hidden sm:flex items-center gap-3">
+          <button onclick="openBookingModal()" class="px-4 py-2.5 rounded-xl border border-slate-300 hover:border-blue-600 text-slate-700 hover:text-blue-600 font-semibold text-sm transition-all shadow-sm flex items-center gap-2">
+            <i data-lucide="wrench" class="w-4 h-4 text-blue-600"></i>
+            <span>Book Repair</span>
+          </button>
+          
+          <a href="https://wa.me/919876543210?text=Hi%20Rafi%20Mobiles,%20I%20have%20an%20enquiry%20regarding%20mobile%20purchase/service." target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm transition-all shadow-md shadow-emerald-600/20 flex items-center gap-2">
+            <i data-lucide="message-circle" class="w-4 h-4 fill-current"></i>
+            <span>WhatsApp Us</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <div class="flex md:hidden items-center gap-2">
+          <button onclick="openBookingModal()" class="p-2.5 rounded-xl bg-blue-50 text-blue-600 font-medium text-xs flex items-center gap-1 border border-blue-100">
+            <i data-lucide="wrench" class="w-4 h-4"></i>
+            <span>Repair</span>
+          </button>
+          <button id="mobileMenuBtn" class="p-2.5 rounded-xl text-slate-600 hover:bg-slate-100 transition-colors focus:outline-none">
+            <i data-lucide="menu" id="menuIcon" class="w-6 h-6"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-slate-100 bg-white/95 px-4 pt-3 pb-6 space-y-3">
+      <a href="#home" class="block py-2 text-base font-semibold text-slate-700 hover:text-blue-600 mobile-nav-link">Home</a>
+      <a href="#products" class="block py-2 text-base font-semibold text-slate-700 hover:text-blue-600 mobile-nav-link">Mobiles & Accessories</a>
+      <a href="#services" class="block py-2 text-base font-semibold text-slate-700 hover:text-blue-600 mobile-nav-link">Repair Services</a>
+      <a href="#features" class="block py-2 text-base font-semibold text-slate-700 hover:text-blue-600 mobile-nav-link">Why Choose Us</a>
+      <a href="#reviews" class="block py-2 text-base font-semibold text-slate-700 hover:text-blue-600 mobile-nav-link">Testimonials</a>
+      <a href="#contact" class="block py-2 text-base font-semibold text-slate-700 hover:text-blue-600 mobile-nav-link">Contact & Location</a>
+      
+      <div class="pt-3 border-t border-slate-100 flex flex-col gap-2">
+        <a href="https://wa.me/919876543210?text=Hi%20Rafi%20Mobiles,%20I%20want%20to%20inquire%20about%20a%20product%20or%20service." target="_blank" class="w-full text-center py-3 bg-emerald-600 text-white rounded-xl font-bold flex items-center justify-center gap-2">
+          <i data-lucide="message-circle" class="w-5 h-5 fill-current"></i> Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative overflow-hidden bg-slate-900 text-white py-16 sm:py-24">
+    <!-- Ambient glowing backdrop circles -->
+    <div class="absolute -top-40 -right-40 w-96 h-96 bg-blue-600/30 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Hero Text -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-900/60 border border-blue-500/30 text-cyan-300 text-xs sm:text-sm font-semibold tracking-wide">
+            <i data-lucide="shield-check" class="w-4 h-4 text-cyan-400"></i>
+            Trusted by 15,000+ Happy Smartphone Owners
+          </div>
+          
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15]">
+            Your Complete Mobile <br>
+            <span class="bg-gradient-to-r from-blue-400 via-cyan-300 to-indigo-300 bg-clip-text text-transparent">
+              Sales & Repair Station
+            </span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+            Get brand-new 5G smartphones, premium designer back covers, fast-charging kits, and pristine audio gadgets. Got a broken display or faulty battery? We fix it in as little as <strong>30 minutes</strong> with 100% original parts!
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#products" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-center text-base shadow-lg shadow-blue-600/40 transition-all duration-200 flex items-center justify-center gap-2">
+              <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+              Browse Catalog
+            </a>
+            <button onclick="openBookingModal()" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-semibold text-center text-base transition-all duration-200 flex items-center justify-center gap-2">
+              <i data-lucide="activity" class="w-5 h-5 text-cyan-400"></i>
+              Instant Repair Estimate
+            </button>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-slate-800 text-left">
+            <div class="flex items-center gap-3">
+              <div class="p-2 rounded-lg bg-blue-500/10 text-cyan-400">
+                <i data-lucide="clock" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs text-slate-400">Turnaround</p>
+                <p class="text-sm font-bold text-white">30-Min Fix</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div class="p-2 rounded-lg bg-blue-500/10 text-cyan-400">
+                <i data-lucide="check-circle" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs text-slate-400">Quality</p>
+                <p class="text-sm font-bold text-white">OEM Parts</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div class="p-2 rounded-lg bg-blue-500/10 text-cyan-400">
+                <i data-lucide="shield" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs text-slate-400">Coverage</p>
+                <p class="text-sm font-bold text-white">90-Day Warranty</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div class="p-2 rounded-lg bg-blue-500/10 text-cyan-400">
+                <i data-lucide="tag" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs text-slate-400">Pricing</p>
+                <p class="text-sm font-bold text-white">Wholesale Rate</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Hero Visual Card -->
+        <div class="lg:col-span-5 relative">
+          <div class="bg-gradient-to-b from-slate-800 to-slate-900 border border-slate-700/80 rounded-3xl p-6 sm:p-8 shadow-2xl relative glow-effect">
+            
+            <div class="flex items-center justify-between pb-6 border-b border-slate-700/60">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-blue-600/20 text-blue-400 flex items-center justify-center">
+                  <i data-lucide="zap" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h3 class="text-white font-bold text-base">Quick Repair Tracker</h3>
+                  <p class="text-xs text-slate-400">Live service desk status</p>
+                </div>
+              </div>
+              <span class="px-2.5 py-1 text-xs rounded-full bg-emerald-500/10 text-emerald-400 font-semibold border border-emerald-500/20">
+                Technicians Ready
+              </span>
+            </div>
+
+            <!-- Interactive Quick Booking in Hero -->
+            <form onsubmit="handleHeroQuickQuote(event)" class="space-y-4 pt-6">
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Your Device Brand / Model</label>
+                <div class="relative">
+                  <i data-lucide="smartphone" class="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5"></i>
+                  <input type="text" id="heroModelInput" required placeholder="e.g. iPhone 13, OnePlus 11R, Redmi Note 13" class="w-full bg-slate-950/70 border border-slate-700 rounded-xl pl-10 pr-4 py-2.5 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-blue-500 transition-colors">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Select Main Issue</label>
+                <div class="relative">
+                  <i data-lucide="alert-circle" class="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5"></i>
+                  <select id="heroIssueSelect" required class="w-full bg-slate-950/70 border border-slate-700 rounded-xl pl-10 pr-4 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500 transition-colors appearance-none">
+                    <option value="Broken Screen / Touch issue" class="bg-slate-900">Broken Screen / Touch Display</option>
+                    <option value="Battery Draining Fast / Dead" class="bg-slate-900">Battery Replacement</option>
+                    <option value="Charging Port Loose / Not Charging" class="bg-slate-900">Charging Jack / Port Repair</option>
+                    <option value="Water / Liquid Damage" class="bg-slate-900">Water Damage Diagnostic</option>
+                    <option value="Camera Lens Crushed / Blurry" class="bg-slate-900">Camera / Glass Replacement</option>
+                    <option value="Software Issue / FRP / Bootloop" class="bg-slate-900">Software Flashing / Unlocking</option>
+                    <option value="Looking to Buy a New/Refurbished Mobile" class="bg-slate-900">Inquiring to Buy a Mobile</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Phone Number (Optional)</label>
+                <div class="relative">
+                  <i data-lucide="phone" class="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5"></i>
+                  <input type="tel" id="heroPhoneInput" placeholder="Your WhatsApp number" class="w-full bg-slate-950/70 border border-slate-700 rounded-xl pl-10 pr-4 py-2.5 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-blue-500 transition-colors">
+                </div>
+              </div>
+
+              <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                Get Instant Quote on WhatsApp
+              </button>
+            </form>
+
+            <div class="mt-4 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+              <span>📍 Walk-in: Main Market Road</span>
+              <span>⚡ No diagnosis fee if repaired</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories & Products Showcase -->
+  <section id="products" class="py-16 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-widest text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+            Showroom & Inventory
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">
+            Mobiles & Premium Accessories
+          </h2>
+          <p class="text-slate-500 mt-2 text-sm sm:text-base max-w-xl">
+            Explore authentic smartphones, military-grade rugged back covers, high-speed GaN chargers, and premium earbuds.
+          </p>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="w-full md:w-72 relative">
+          <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5"></i>
+          <input type="text" id="productSearchInput" oninput="filterProducts()" placeholder="Search cover, charger, model..." class="w-full pl-10 pr-4 py-2 text-sm border border-slate-300 rounded-xl focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all">
+        </div>
+      </div>
+
+      <!-- Filter Tabs / Pills -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar" id="categoryPillContainer">
+        <button onclick="setCategory('all')" data-cat="all" class="cat-pill px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap bg-blue-600 text-white shadow-sm">
+          All Products
+        </button>
+        <button onclick="setCategory('smartphones')" data-cat="smartphones" class="cat-pill px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap bg-slate-100 hover:bg-slate-200 text-slate-700">
+          Smartphones
+        </button>
+        <button onclick="setCategory('covers')" data-cat="covers" class="cat-pill px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap bg-slate-100 hover:bg-slate-200 text-slate-700">
+          Back Covers & Cases
+        </button>
+        <button onclick="setCategory('chargers')" data-cat="chargers" class="cat-pill px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap bg-slate-100 hover:bg-slate-200 text-slate-700">
+          Fast Chargers & Cables
+        </button>
+        <button onclick="setCategory('audio')" data-cat="audio" class="cat-pill px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap bg-slate-100 hover:bg-slate-200 text-slate-700">
+          TWS Earbuds & Neckbands
+        </button>
+        <button onclick="setCategory('protection')" data-cat="protection" class="cat-pill px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap bg-slate-100 hover:bg-slate-200 text-slate-700">
+          Tempered & UV Glass
+        </button>
+      </div>
+
+      <!-- Product Grid -->
+      <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <!-- Empty State -->
+      <div id="noProductsFound" class="hidden text-center py-16">
+        <div class="w-16 h-16 bg-slate-100 text-slate-400 rounded-full flex items-center justify-center mx-auto mb-3">
+          <i data-lucide="package-search" class="w-8 h-8"></i>
+        </div>
+        <p class="text-lg font-bold text-slate-700">No items matched your query</p>
+        <p class="text-sm text-slate-500">Contact us directly on WhatsApp to check store shelf stock!</p>
+        <button onclick="resetFilters()" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-xl text-xs font-semibold">
+          Reset Filter
+        </button>
+      </div>
+
+      <!-- Catalog Banner -->
+      <div class="mt-12 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center shrink-0">
+            <i data-lucide="sparkles" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-slate-900 text-lg">Looking for a specific phone model or customized case?</h4>
+            <p class="text-slate-600 text-sm">We print custom photo back covers and source any original handset within 24 hours.</p>
+          </div>
+        </div>
+        <a href="https://wa.me/919876543210?text=Hi%20Rafi%20Mobiles,%20I%20am%20looking%20for%20a%20specific%20model/cover" target="_blank" class="shrink-0 px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm flex items-center gap-2">
+          <i data-lucide="message-square" class="w-4 h-4"></i> Enquire Custom Model
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Services & Repairs Section -->
+  <section id="services" class="py-16 sm:py-24 bg-slate-900 text-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-400 bg-cyan-950 px-3 py-1 rounded-full border border-cyan-800">
+          Professional Care Lab
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">
+          Expert Mobile Repair Services
+        </h2>
+        <p class="text-slate-400 mt-2 text-sm sm:text-base">
+          Our certified hardware specialists use high-precision tools and authentic grade-A components.
+        </p>
+      </div>
+
+      <!-- Repair Service Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Screen Replacement -->
+        <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-blue-500/50 hover:bg-slate-800 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center mb-4">
+              <i data-lucide="smartphone" class="w-6 h-6"></i>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-lg font-bold text-white">Display & Touch Glass</h3>
+              <span class="text-xs font-medium bg-blue-500/20 text-cyan-300 px-2 py-0.5 rounded-full border border-blue-500/30">30 - 45 Mins</span>
+            </div>
+            <p class="text-slate-400 text-sm mb-4">
+              Cracked screen, green line error, or unresponsive touch? We install OEM OLED, AMOLED, & high-brightness LCD combos.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-1.5 mb-6">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Original Touch Sampling Rate</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> 90-Day Touch Warranty Included</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-slate-700/70 flex items-center justify-between">
+            <div>
+              <span class="text-xs text-slate-400">Starting from</span>
+              <p class="text-base font-extrabold text-white">₹799*</p>
+            </div>
+            <button onclick="openBookingModal('Screen Replacement')" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-xs font-bold text-white transition-colors">
+              Book Service
+            </button>
+          </div>
+        </div>
+
+        <!-- Battery Replacement -->
+        <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-blue-500/50 hover:bg-slate-800 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4">
+              <i data-lucide="battery-charging" class="w-6 h-6"></i>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-lg font-bold text-white">Battery Upgrade</h3>
+              <span class="text-xs font-medium bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full border border-emerald-500/30">20 Mins</span>
+            </div>
+            <p class="text-slate-400 text-sm mb-4">
+              Fast battery drain, random shutdowns, or swollen back panel? Replace with 100% capacity Li-ion certified battery.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-1.5 mb-6">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Up to 100% Battery Health Status</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> 6-Month Replacement Guarantee</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-slate-700/70 flex items-center justify-between">
+            <div>
+              <span class="text-xs text-slate-400">Starting from</span>
+              <p class="text-base font-extrabold text-white">₹650*</p>
+            </div>
+            <button onclick="openBookingModal('Battery Upgrade')" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-xs font-bold text-white transition-colors">
+              Book Service
+            </button>
+          </div>
+        </div>
+
+        <!-- Charging Port & Mic -->
+        <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-blue-500/50 hover:bg-slate-800 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-4">
+              <i data-lucide="plug-zap" class="w-6 h-6"></i>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-lg font-bold text-white">Charging Jack / Sub-Board</h3>
+              <span class="text-xs font-medium bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded-full border border-amber-500/30">30 Mins</span>
+            </div>
+            <p class="text-slate-400 text-sm mb-4">
+              Loose cable connector, slow charging, or microphone sound issues? Fixed with genuine Type-C / Lightning modules.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-1.5 mb-6">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Fast Charge (SuperVOOC/PD) Supported</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Cleaned audio & mic channels</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-slate-700/70 flex items-center justify-between">
+            <div>
+              <span class="text-xs text-slate-400">Starting from</span>
+              <p class="text-base font-extrabold text-white">₹350*</p>
+            </div>
+            <button onclick="openBookingModal('Charging Port Repair')" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-xs font-bold text-white transition-colors">
+              Book Service
+            </button>
+          </div>
+        </div>
+
+        <!-- Liquid & Water Damage -->
+        <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-blue-500/50 hover:bg-slate-800 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-4">
+              <i data-lucide="droplets" class="w-6 h-6"></i>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-lg font-bold text-white">Water & Liquid Revival</h3>
+              <span class="text-xs font-medium bg-cyan-500/20 text-cyan-300 px-2 py-0.5 rounded-full border border-cyan-500/30">Same Day</span>
+            </div>
+            <p class="text-slate-400 text-sm mb-4">
+              Ultrasonic chemical cleaning and motherboard short-circuit troubleshooting to recover data and revive dead phones.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-1.5 mb-6">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> IC-level short circuit test</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Data recovery prioritization</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-slate-700/70 flex items-center justify-between">
+            <div>
+              <span class="text-xs text-slate-400">Starting from</span>
+              <p class="text-base font-extrabold text-white">₹499*</p>
+            </div>
+            <button onclick="openBookingModal('Water Damage Treatment')" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-xs font-bold text-white transition-colors">
+              Book Service
+            </button>
+          </div>
+        </div>
+
+        <!-- Camera & Glass Replacement -->
+        <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-blue-500/50 hover:bg-slate-800 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4">
+              <i data-lucide="camera" class="w-6 h-6"></i>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-lg font-bold text-white">Camera Lens & Sensor</h3>
+              <span class="text-xs font-medium bg-purple-500/20 text-purple-300 px-2 py-0.5 rounded-full border border-purple-500/30">45 Mins</span>
+            </div>
+            <p class="text-slate-400 text-sm mb-4">
+              Blurry photographs, broken back camera glass cover, or autofocus vibration errors restored to factory clarity.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-1.5 mb-6">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Scratch-resistant sapphire lenses</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Dust-free chamber installation</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-slate-700/70 flex items-center justify-between">
+            <div>
+              <span class="text-xs text-slate-400">Starting from</span>
+              <p class="text-base font-extrabold text-white">₹399*</p>
+            </div>
+            <button onclick="openBookingModal('Camera Sensor/Lens Repair')" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-xs font-bold text-white transition-colors">
+              Book Service
+            </button>
+          </div>
+        </div>
+
+        <!-- Software & Unlocking -->
+        <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-blue-500/50 hover:bg-slate-800 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center mb-4">
+              <i data-lucide="cpu" class="w-6 h-6"></i>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-lg font-bold text-white">Software & OS Flashing</h3>
+              <span class="text-xs font-medium bg-pink-500/20 text-pink-300 px-2 py-0.5 rounded-full border border-pink-500/30">30 Mins</span>
+            </div>
+            <p class="text-slate-400 text-sm mb-4">
+              Stuck on logo bootloop, lagging system, forgot pattern password, or regional network unlock with official tools.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-1.5 mb-6">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Official firmware updating</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Safe backup solutions</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-slate-700/70 flex items-center justify-between">
+            <div>
+              <span class="text-xs text-slate-400">Starting from</span>
+              <p class="text-base font-extrabold text-white">₹299*</p>
+            </div>
+            <button onclick="openBookingModal('Software Flashing')" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-xs font-bold text-white transition-colors">
+              Book Service
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Why Choose Us / Value Proposition -->
+  <section id="features" class="py-16 sm:py-24 bg-slate-50 border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-blue-600 bg-blue-100/70 px-3 py-1 rounded-full">
+          The Rafi Mobiles Promise
+        </span>
+        <h2 class="text-3xl font-extrabold text-slate-900 mt-3">Why Thousands Trust Rafi Mobiles</h2>
+        <p class="text-slate-600 text-sm sm:text-base mt-2">Transparent pricing, open repair desk view, and guaranteed genuine products.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:-translate-y-1 transition-transform">
+          <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+            <i data-lucide="shield-check" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">100% Genuine Spares</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            No cheap duplicate screens. We stock verified grade-A panels, ICs, and certified cables from trustworthy manufacturers.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:-translate-y-1 transition-transform">
+          <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4">
+            <i data-lucide="user-check" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Certified Technicians</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            10+ years of micro-soldering and motherboard repairing experience. Your precious device and privacy are fully secure with us.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:-translate-y-1 transition-transform">
+          <div class="w-12 h-12 rounded-xl bg-cyan-100 text-cyan-600 flex items-center justify-center mb-4">
+            <i data-lucide="timer" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Fast 30-Min Delivery</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Relax in our air-conditioned lounge while your display or battery is replaced in front of your eyes in under 30 minutes.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:-translate-y-1 transition-transform">
+          <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4">
+            <i data-lucide="badge-check" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Up to 90 Days Warranty</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Every major display replacement or hardware fix comes backed by a written invoice warranty for total peace of mind.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Reviews / Testimonials -->
+  <section id="reviews" class="py-16 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+            Real Feedback
+          </span>
+          <h2 class="text-3xl font-extrabold text-slate-900 mt-2">What Our Customers Say</h2>
+        </div>
+        <div class="flex items-center gap-2 text-amber-500 font-bold text-sm bg-amber-50 px-4 py-2 rounded-xl border border-amber-200">
+          <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+          <span>4.9 / 5.0 Rating based on 850+ Google Reviews</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center text-amber-400 gap-1 mb-3">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <p class="text-slate-700 text-sm italic mb-4">
+              "Dropped my iPhone 14 Pro and was terrified of the authorized center quote. Rafi bhai repaired the display glass in just 40 minutes at a fraction of the cost. The screen touch is buttery smooth like new!"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-200">
+            <div class="w-10 h-10 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-sm">
+              AK
+            </div>
+            <div>
+              <p class="text-sm font-bold text-slate-900">Arun Kumar</p>
+              <p class="text-xs text-slate-500">Verified Customer &bull; iPhone Repair</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center text-amber-400 gap-1 mb-3">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <p class="text-slate-700 text-sm italic mb-4">
+              "The best mobile shop in the area! Got premium rugged covers and a fast 65W GaN adapter. They also applied UV glass with zero bubbles. Very polite staff and honest advice."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-200">
+            <div class="w-10 h-10 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-sm">
+              FA
+            </div>
+            <div>
+              <p class="text-sm font-bold text-slate-900">Farooq Ahmed</p>
+              <p class="text-xs text-slate-500">Verified Customer &bull; Accessories</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center text-amber-400 gap-1 mb-3">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <p class="text-slate-700 text-sm italic mb-4">
+              "My OnePlus was not charging at all. Another shop asked to change the full board. Rafi Mobiles simply fixed the IC pin within 25 minutes for just ₹350. Genuine honesty is hard to find!"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-200">
+            <div class="w-10 h-10 rounded-full bg-indigo-600 text-white font-bold flex items-center justify-center text-sm">
+              SP
+            </div>
+            <div>
+              <p class="text-sm font-bold text-slate-900">Sanya Patel</p>
+              <p class="text-xs text-slate-500">Verified Customer &bull; Port Service</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Store Details & Contact Section -->
+  <section id="contact" class="py-16 sm:py-24 bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid lg:grid-cols-12 gap-12">
+        
+        <!-- Left: Contact Details -->
+        <div class="lg:col-span-5 space-y-8">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-400 bg-cyan-950 px-3 py-1 rounded-full border border-cyan-800">
+              Visit Store
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Rafi Mobiles & Service Station</h2>
+            <p class="text-slate-400 text-sm mt-2">
+              Walk right in for on-the-spot repair assessments or purchase genuine smartphones & premium gadgets.
+            </p>
+          </div>
+
+          <div class="space-y-4">
+            
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-800/60 border border-slate-700/80">
+              <div class="w-10 h-10 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-slate-400 uppercase">Shop Address</p>
+                <p class="text-sm font-bold text-white mt-0.5">Shop #12, Ground Floor, Royal Commercial Complex</p>
+                <p class="text-xs text-slate-300 mt-0.5">Opposite City Bus Stand, Main Market Road</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-800/60 border border-slate-700/80">
+              <div class="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                <i data-lucide="phone-call" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-slate-400 uppercase">Phone & WhatsApp</p>
+                <p class="text-sm font-bold text-white mt-0.5">+91 98765 43210 / +91 91234 56789</p>
+                <p class="text-xs text-emerald-400 mt-0.5">Instant WhatsApp reply active</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-800/60 border border-slate-700/80">
+              <div class="w-10 h-10 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center shrink-0">
+                <i data-lucide="clock" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-slate-400 uppercase">Store Timings</p>
+                <p class="text-sm font-bold text-white mt-0.5">Monday to Sunday: 9:30 AM – 10:00 PM</p>
+                <p class="text-xs text-cyan-300 mt-0.5">Open 365 Days a Year</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="flex items-center gap-3">
+            <a href="https://wa.me/919876543210" target="_blank" class="flex-1 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-center font-bold text-sm flex items-center justify-center gap-2 transition-colors">
+              <i data-lucide="message-circle" class="w-4 h-4 fill-current"></i> WhatsApp Store
+            </a>
+            <a href="tel:+919876543210" class="flex-1 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-center font-bold text-sm flex items-center justify-center gap-2 transition-colors">
+              <i data-lucide="phone" class="w-4 h-4"></i> Call Store Now
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right: Map / Store Locator Interactive Card -->
+        <div class="lg:col-span-7">
+          <div class="h-full rounded-3xl overflow-hidden border border-slate-700 bg-slate-800 relative min-h-[380px] flex flex-col">
+            <!-- Simulated Map Visual -->
+            <div class="relative w-full flex-1 bg-slate-950 flex items-center justify-center p-8 overflow-hidden">
+              <!-- Grid background -->
+              <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#3b82f6 1px, transparent 1px); background-size: 24px 24px;"></div>
+              
+              <div class="relative text-center z-10 space-y-4 max-w-md">
+                <div class="w-16 h-16 rounded-2xl bg-blue-600/20 border border-blue-500/40 text-blue-400 flex items-center justify-center mx-auto animate-bounce">
+                  <i data-lucide="map-pin" class="w-8 h-8"></i>
+                </div>
+                <h4 class="text-xl font-bold text-white">Find Rafi Mobiles in Main Bazaar</h4>
+                <p class="text-slate-400 text-xs">
+                  Convenient landmark right opposite the central bus depot. Free two-wheeler & car parking available right outside.
+                </p>
+                <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-slate-950 font-bold text-xs hover:bg-slate-200 transition-colors shadow-lg">
+                  <i data-lucide="navigation" class="w-4 h-4 text-blue-600"></i> Open in Google Maps
+                </a>
+              </div>
+            </div>
+
+            <div class="p-4 bg-slate-800/90 border-t border-slate-700/80 flex items-center justify-between text-xs text-slate-400">
+              <span class="flex items-center gap-1.5"><i data-lucide="zap" class="w-4 h-4 text-amber-400"></i> Fast in-store repair counter</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="credit-card" class="w-4 h-4 text-emerald-400"></i> UPI, Cash & Cards Accepted</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-slate-800 text-sm">
+        
+        <div class="space-y-3">
+          <div class="flex items-center gap-2 text-white font-extrabold text-xl">
+            <span class="text-blue-500">RAFI</span> MOBILES
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Your neighborhood certified destination for brand-new mobile smartphones, quality back protection, high-fidelity sound gear, and 30-minute rapid repairs.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold text-sm mb-3">Quick Links</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#products" class="hover:text-blue-400 transition-colors">Latest 5G Smartphones</a></li>
+            <li><a href="#products" class="hover:text-blue-400 transition-colors">Shockproof Back Covers</a></li>
+            <li><a href="#products" class="hover:text-blue-400 transition-colors">Fast Charging & Power</a></li>
+            <li><a href="#services" class="hover:text-blue-400 transition-colors">Display Combo Replacement</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold text-sm mb-3">Repair Highlights</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#services" class="hover:text-blue-400 transition-colors">iPhone Screen Glass Fix</a></li>
+            <li><a href="#services" class="hover:text-blue-400 transition-colors">Battery Drain Solutions</a></li>
+            <li><a href="#services" class="hover:text-blue-400 transition-colors">Water Damage Recovery</a></li>
+            <li><a href="#services" class="hover:text-blue-400 transition-colors">Type-C Jack Replacement</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold text-sm mb-3">Working Hours</h4>
+          <p class="text-xs text-slate-300">Open 7 Days a Week</p>
+          <p class="text-xs text-slate-400 mt-1">9:30 AM to 10:00 PM</p>
+          <div class="mt-4 flex items-center gap-3">
+            <span class="inline-flex items-center px-2 py-1 rounded bg-slate-800 text-xs text-slate-300 border border-slate-700">
+              UPI Accepted: GPay, PhonePe, Paytm
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3">
+        <p>&copy; <span id="currentYear"></span> Rafi Mobiles. All rights reserved.</p>
+        <p>Built with high performance for local business on GitHub Pages.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Repair Booking Modal -->
+  <div id="bookingModal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative border border-slate-200">
+      
+      <!-- Close Button -->
+      <button onclick="closeBookingModal()" class="absolute top-5 right-5 p-2 text-slate-400 hover:text-slate-700 rounded-full hover:bg-slate-100 transition-colors">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center">
+          <i data-lucide="wrench" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-slate-900">Book Repair / Get Quote</h3>
+          <p class="text-xs text-slate-500">Connects directly to our shop technician desk on WhatsApp</p>
+        </div>
+      </div>
+
+      <form onsubmit="handleModalSubmit(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Your Name</label>
+          <input type="text" id="modalCustomerName" required placeholder="e.g. Rahul Sharma" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Phone Model & Brand</label>
+          <input type="text" id="modalDeviceModel" required placeholder="e.g. Samsung Galaxy S21 / Vivo V29" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Repair Issue / Requirement</label>
+          <select id="modalServiceType" required class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600">
+            <option value="Broken Display / Touchscreen">Broken Display / Touchscreen Replacement</option>
+            <option value="Battery Problem / Rapid Drain">Battery Problem / Rapid Drain</option>
+            <option value="Charging Port / Not Charging">Charging Port / Not Charging</option>
+            <option value="Water / Moisture Damage">Water / Moisture Damage</option>
+            <option value="Camera Lens or Blur Issue">Camera Lens or Blur Issue</option>
+            <option value="Software Unlocking / Flashing">Software Unlocking / Flashing</option>
+            <option value="Back Panel / Housing Glass">Back Glass / Housing Replacement</option>
+            <option value="Other Accessory / Custom Request">Other Accessory / Custom Request</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Brief Details / Notes</label>
+          <textarea id="modalNotes" rows="2" placeholder="e.g. Screen is black but vibrates, or need fast service today" class="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600"></textarea>
+        </div>
+
+        <button type="submit" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md transition-colors flex items-center justify-center gap-2">
+          <i data-lucide="message-circle" class="w-4 h-4 fill-current"></i> Submit & Open WhatsApp Chat
+        </button>
+
+        <p class="text-[11px] text-center text-slate-400">
+          We will review your inquiry immediately and quote best pricing within 5-10 minutes.
+        </p>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 bg-slate-900 text-white px-5 py-3 rounded-2xl shadow-xl flex items-center gap-3 border border-slate-700 text-sm">
+    <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400"></i>
+    <span id="toastMsg">Inquiry Sent Successfully!</span>
+  </div>
+
+  <!-- JavaScript Application Logic -->
+  <script>
+    // Current Year for Footer
+    document.getElementById('currentYear').innerText = new Date().getFullYear();
+
+    // Catalog Data (Phones, Covers, Chargers, Audio, Glass)
+    const productsData = [
+      {
+        id: 1,
+        name: "Redmi Note 13 Pro 5G (8GB / 256GB)",
+        category: "smartphones",
+        price: 21999,
+        originalPrice: 24999,
+        tag: "Best Seller",
+        image: "https://placehold.co/400x320/0f172a/38bdf8?text=Redmi+Note+13+Pro",
+        specs: "200MP OIS Camera • 67W Turbo Charge • 120Hz AMOLED"
+      },
+      {
+        id: 2,
+        name: "OnePlus Nord CE 4 5G (Dark Chrome)",
+        category: "smartphones",
+        price: 24999,
+        originalPrice: 26999,
+        tag: "Trending",
+        image: "https://placehold.co/400x320/0f172a/38bdf8?text=OnePlus+Nord+CE+4",
+        specs: "Snapdragon 7 Gen 3 • 100W SuperVOOC • 5500 mAh"
+      },
+      {
+        id: 3,
+        name: "Military Grade Armor Kickstand Case",
+        category: "covers",
+        price: 349,
+        originalPrice: 699,
+        tag: "50% Off",
+        image: "https://placehold.co/400x320/0f172a/38bdf8?text=Armor+Kickstand+Cover",
+        specs: "Drop-proof TPU edges • Magnetic car mount ring • Camera slider"
+      },
+      {
+        id: 4,
+        name: "Luxury Matte Silicone MagSafe Cover",
+        category: "covers",
+        price: 299,
+        originalPrice: 599,
+        tag: "Hot Pick",
+        image: "https://placehold.co/400x320/0f172a/38bdf8?text=MagSafe+Silicone+Case",
+        specs: "Anti-fingerprint velvet lining • High magnetic strength"
+      },
+      {
+        id: 5,
+        name: "65W GaN Dual Port Fast Wall Charger",
+        category: "chargers",
+        price: 999,
+        originalPrice: 1799,
+        tag: "Genuine",
+        image: "https://placehold.co/400x320/0f172a/38bdf8?text=65W+GaN+Charger",
+        specs: "Type-C + USB-A • PD 3.0 & VOOC • Overheat safeguard"
+      },
+      {
+        id: 6,
+        name: "Braided 100W Type-C to Type-C Cable (1.5m)",
+        category: "chargers",
+        price: 249,
+        originalPrice: 499,
+        tag: "Durable",
+        image: "https://placehold.co/400x320/0f172a/38bdf8?text=100W+Braided+Cable",
+        specs: "480 Mbps transfer • High-density nylon nylon knit"
+      },
+      {
+        id: 7,
+        name: "Boat Airdopes ANC True Wireless Earbuds",
+        category: "audio",
+        price: 1499,
+        originalPrice: 2990,
+        tag: "Top Bass",
+        image: "https://placehold.co/400x320/0f172a/38bdf8?text=TWS+Wireless+Earbuds",
+        specs: "32dB Active Noise Cancel • 45h Playback • Low Latency"
+      },
+      {
+        id: 8,
+        name: "Full Curved Edge UV Tempered Glass",
+        category: "protection",
+        price: 199,
+        originalPrice: 450,
+        tag: "In-Store Fit",
+        image: "https://placehold.co/400x320/0f172a/38bdf8?text=UV+Tempered+Glass",
+        specs: "9H Hardness • Oleophobic Coating • Free UV light fixing"
+      }
+    ];
+
+    let currentCategory = 'all';
+
+    // Render Product Cards
+    function renderProducts(items) {
+      const grid = document.getElementById('productGrid');
+      const emptyState = document.getElementById('noProductsFound');
+      grid.innerHTML = '';
+
+      if (items.length === 0) {
+        emptyState.classList.remove('hidden');
+        return;
+      } else {
+        emptyState.classList.add('hidden');
+      }
+
+      items.forEach(product => {
+        const card = document.createElement('div');
+        card.className = "bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col justify-between group";
+
+        // Pre-composed WhatsApp inquiry link
+        const whatsappMsg = encodeURIComponent(`Hi Rafi Mobiles! I am interested in purchasing: "${product.name}" priced at ₹${product.price.toLocaleString('en-IN')}. Is this in stock?`);
+        const whatsappUrl = `https://wa.me/919876543210?text=${whatsappMsg}`;
+
+        card.innerHTML = `
+          <div>
+            <!-- Image & Tag -->
+            <div class="relative bg-slate-100 h-48 overflow-hidden flex items-center justify-center">
+              <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+              <span class="absolute top-3 left-3 bg-blue-600 text-white text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full shadow-sm">
+                ${product.tag}
+              </span>
+            </div>
+
+            <!-- Details -->
+            <div class="p-5">
+              <h3 class="font-bold text-slate-900 text-sm sm:text-base leading-snug line-clamp-2">${product.name}</h3>
+              <p class="text-xs text-slate-500 mt-1.5 leading-relaxed">${product.specs}</p>
+              
+              <div class="mt-3 flex items-baseline gap-2">
+                <span class="text-lg font-extrabold text-slate-900">₹${product.price.toLocaleString('en-IN')}</span>
+                <span class="text-xs text-slate-400 line-through">₹${product.originalPrice.toLocaleString('en-IN')}</span>
+                <span class="text-[11px] font-bold text-emerald-600">Save ₹${(product.originalPrice - product.price).toLocaleString('en-IN')}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom CTA -->
+          <div class="p-5 pt-0">
+            <a href="${whatsappUrl}" target="_blank" class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-blue-600 text-white text-xs font-bold transition-colors flex items-center justify-center gap-2">
+              <i data-lucide="message-circle" class="w-3.5 h-3.5 fill-current"></i> Buy on WhatsApp
+            </a>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      // Re-initialize Lucide Icons
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    }
+
+    // Set Category Filter
+    function setCategory(category) {
+      currentCategory = category;
+      const pills = document.querySelectorAll('.cat-pill');
+      pills.forEach(p => {
+        if (p.getAttribute('data-cat') === category) {
+          p.className = 'cat-pill px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap bg-blue-600 text-white shadow-sm';
+        } else {
+          p.className = 'cat-pill px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap bg-slate-100 hover:bg-slate-200 text-slate-700';
+        }
+      });
+      filterProducts();
+    }
+
+    // Search & Filter combined
+    function filterProducts() {
+      const searchTerm = document.getElementById('productSearchInput').value.toLowerCase().trim();
+      const filtered = productsData.filter(item => {
+        const matchesCategory = (currentCategory === 'all') || (item.category === currentCategory);
+        const matchesSearch = item.name.toLowerCase().includes(searchTerm) || item.specs.toLowerCase().includes(searchTerm);
+        return matchesCategory && matchesSearch;
+      });
+      renderProducts(filtered);
+    }
+
+    function resetFilters() {
+      document.getElementById('productSearchInput').value = '';
+      setCategory('all');
+    }
+
+    // Modal Control
+    function openBookingModal(preselectedService = '') {
+      if (preselectedService) {
+        const select = document.getElementById('modalServiceType');
+        for (let i = 0; i < select.options.length; i++) {
+          if (select.options[i].text.toLowerCase().includes(preselectedService.toLowerCase())) {
+            select.selectedIndex = i;
+            break;
+          }
+        }
+      }
+      document.getElementById('bookingModal').classList.remove('hidden');
+    }
+
+    function closeBookingModal() {
+      document.getElementById('bookingModal').classList.add('hidden');
+    }
+
+    // Hero Form Handler
+    function handleHeroQuickQuote(e) {
+      e.preventDefault();
+      const model = document.getElementById('heroModelInput').value;
+      const issue = document.getElementById('heroIssueSelect').value;
+      const phone = document.getElementById('heroPhoneInput').value;
+
+      const message = `Hello Rafi Mobiles, I require a quick quote:%0A- *Device Model:* ${model}%0A- *Issue:* ${issue}${phone ? `%0A- *My Phone:* ${phone}` : ''}`;
+      window.open(`https://wa.me/919876543210?text=${message}`, '_blank');
+      showToast('Redirecting to WhatsApp for estimate...');
+    }
+
+    // Modal Submit Handler
+    function handleModalSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('modalCustomerName').value;
+      const model = document.getElementById('modalDeviceModel').value;
+      const service = document.getElementById('modalServiceType').value;
+      const notes = document.getElementById('modalNotes').value;
+
+      const message = `Hi Rafi Mobiles, I would like to book a service request:%0A- *Name:* ${name}%0A- *Device:* ${model}%0A- *Service Required:* ${service}%0A- *Notes:* ${notes || 'N/A'}`;
+      window.open(`https://wa.me/919876543210?text=${message}`, '_blank');
+      closeBookingModal();
+      showToast('Service ticket prepared! Opening WhatsApp...');
+    }
+
+    // Toast notification
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.innerText = msg;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 3500);
+    }
+
+    // Mobile Navigation Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Close modal when clicking outside
+    window.addEventListener('click', (e) => {
+      const modal = document.getElementById('bookingModal');
+      if (e.target === modal) {
+        closeBookingModal();
+      }
+    });
+
+    // Initial Render
+    window.onload = function() {
+      renderProducts(productsData);
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    };
+  </script>
+</body>
+  </html>
